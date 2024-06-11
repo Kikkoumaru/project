@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Detail</title>
+</head>
+<body>
+    <h1>{{ patient.first_name }} {{ patient.last_name }}</h1>
+    <p>Insurance Number: {{ patient.insurance_number }}</p>
+    <p>Insurance Expiry Date: {{ patient.insurance_expiry_date }}</p>
+    <a href="{% url 'patient_update' patient.pat_id %}">Edit</a>
+    <form action="{% url 'patient_delete' patient.pat_id %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{% url 'patient_list' %}">Back to List</a>
+</body>
+</html>

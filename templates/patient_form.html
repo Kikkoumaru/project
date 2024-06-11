@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Form</title>
+</head>
+<body>
+    <h1>{% if patient %}Edit{% else %}Create{% endif %} Patient</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ patient.first_name|default_if_none:'' }}">
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ patient.last_name|default_if_none:'' }}">
+        <label for="insurance_number">Insurance Number:</label>
+        <input type="text" id="insurance_number" name="insurance_number" value="{{ patient.insurance_number|default_if_none:'' }}">
+        <label for="insurance_expiry_date">Insurance Expiry Date:</label>
+        <input type="date" id="insurance_expiry_date" name="insurance_expiry_date" value="{{ patient.insurance_expiry_date|default_if_none:'' }}">
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'patient_list' %}">Back to List</a>
+</body>
+</html>
