@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Patient Detail</title>
+    <title>患者詳細</title>
 </head>
 <body>
-    <h1>{{ patient.first_name }} {{ patient.last_name }}</h1>
-    <p>Insurance Number: {{ patient.insurance_number }}</p>
-    <p>Insurance Expiry Date: {{ patient.insurance_expiry_date }}</p>
-    <a href="{% url 'patient_update' patient.pat_id %}">Edit</a>
-    <form action="{% url 'patient_delete' patient.pat_id %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Delete</button>
+    <h1>患者詳細</h1>
+    <p>ID: {{ patient.pat_id }}</p>
+    <p>名前: {{ patient.first_name }}</p>
+    <p>姓: {{ patient.last_name }}</p>
+    <p>保険番号: {{ patient.insurance_number }}</p>
+    <p>保険有効期限: {{ patient.insurance_expiry_date }}</p>
+    <a href="{% url 'patient_update' patient.pat_id %}">編集</a>
+    <form method="post" action="{% url 'patient_delete' patient.pat_id %}">{% csrf_token %}
+        <input type="submit" value="削除">
     </form>
-    <a href="{% url 'patient_list' %}">Back to List</a>
+    <a href="{% url 'patient_list' %}">戻る</a>
 </body>
 </html>

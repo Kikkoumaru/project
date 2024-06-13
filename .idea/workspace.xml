@@ -4,37 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a025510-30d2-41b6-bd8c-bb195a2563e4" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/djangoProject2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/abaranti/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/abaranti/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/abaranti/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/abaranti/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/abaranti/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/abaranti/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/abaranti/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/abaranti/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject2/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject2/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject2/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject2/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoProject2/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/patient_confirm_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/patient_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/patient_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/patient_list.html" afterDir="false" />
+    <list default="true" id="7a025510-30d2-41b6-bd8c-bb195a2563e4" name="変更" comment="6/11にテストで変更を行った　v^_^v">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/abaranti/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/abaranti/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/abaranti/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject2/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject2/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject2/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject2/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/patient_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/patient_confirm_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/patient_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/patient_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/patient_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/patient_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/patient_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/patient_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -47,9 +37,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2hirIlDlSDazn5CDvPC7JeI9JsS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -59,8 +52,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "Django サーバー.djangoProject2.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
@@ -68,7 +64,13 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "aDefault",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -79,6 +81,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="djangoProject2.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -113,8 +116,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718087660404</updated>
-      <workItem from="1718087661869" duration="2838000" />
+      <workItem from="1718087661869" duration="3343000" />
+      <workItem from="1718166736723" duration="4701000" />
+      <workItem from="1718237116747" duration="21342000" />
     </task>
+    <task id="LOCAL-00001" summary="first">
+      <option name="closed" value="true" />
+      <created>1718090836260</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718090836260</updated>
+    </task>
+    <task id="LOCAL-00002" summary="6/11にテストで変更を行った　v^_^v">
+      <option name="closed" value="true" />
+      <created>1718090941051</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718090941051</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,5 +152,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first" />
+    <MESSAGE value="6/11にテストで変更を行った　v^_^v" />
+    <option name="LAST_COMMIT_MESSAGE" value="6/11にテストで変更を行った　v^_^v" />
   </component>
 </project>

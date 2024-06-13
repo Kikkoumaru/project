@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Delete Patient</title>
+    <title>Confirm Delete</title>
 </head>
 <body>
-    <h1>Are you sure you want to delete {{ patient.first_name }} {{ patient.last_name }}?</h1>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Yes, delete</button>
+    <h1>Confirm Delete</h1>
+    <p>Are you sure you want to delete patient {{ patient.first_name }} {{ patient.last_name }}?</p>
+    <form method="post">{% csrf_token %}
+        <input type="submit" value="Delete">
     </form>
-    <a href="{% url 'patient_list' %}">No, go back</a>
+    <a href="{% url 'patient_list' %}">Cancel</a>
 </body>
 </html>

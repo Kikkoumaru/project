@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Patient Form</title>
+    <title>患者フォーム</title>
 </head>
 <body>
-    <h1>{% if patient %}Edit{% else %}Create{% endif %} Patient</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" value="{{ patient.first_name|default_if_none:'' }}">
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" value="{{ patient.last_name|default_if_none:'' }}">
-        <label for="insurance_number">Insurance Number:</label>
-        <input type="text" id="insurance_number" name="insurance_number" value="{{ patient.insurance_number|default_if_none:'' }}">
-        <label for="insurance_expiry_date">Insurance Expiry Date:</label>
-        <input type="date" id="insurance_expiry_date" name="insurance_expiry_date" value="{{ patient.insurance_expiry_date|default_if_none:'' }}">
-        <button type="submit">Submit</button>
+    <h1>患者フォーム</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="post">{% csrf_token %}
+        <label for="pat_id">患者ID:</label>
+        <input type="text" id="pat_id" name="pat_id" value="{{ patient.pat_id|default_if_none:'' }}" required><br><br>
+        <label for="first_name">名前:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ patient.first_name|default_if_none:'' }}" required><br><br>
+        <label for="last_name">苗字:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ patient.last_name|default_if_none:'' }}" required><br><br>
+        <label for="insurance_number">保険番号:</label>
+        <input type="text" id="insurance_number" name="insurance_number" value="{{ patient.insurance_number|default_if_none:'' }}" required><br><br>
+        <label for="insurance_expiry_date">保険有効期限:</label>
+        <input type="date" id="insurance_expiry_date" name="insurance_expiry_date" value="{{ patient.insurance_expiry_date|default_if_none:'' }}" required><br><br>
+        <input type="submit" value="保存">
     </form>
-    <a href="{% url 'patient_list' %}">Back to List</a>
+    <a href="{% url 'patient_list' %}">キャンセル</a>
 </body>
 </html>
