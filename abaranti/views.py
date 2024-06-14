@@ -1,14 +1,14 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Patient
+from .models import Patient, Employee
 from django.contrib.auth.decorators import login_required
 
 
 def user_login(request):
     if request.method == 'POST':
-        email = request.POST.get('email')
+        empid = request.POST.get('empid')
         password = request.POST.get('password')
-        user = authenticate(request, email=email, password=password)
+        user = authenticate(request, empid=empid, password=password)
         if user is not None:
             login(request, user)
             return redirect('patient_list')
@@ -75,3 +75,16 @@ def patient_delete(request, patient_id):
         patient.delete()
         return redirect('patient_list')
     return render(request, 'patient_confirm_delete.html', {'patient': patient})
+
+
+def register(request):
+    if request.method == 'POST':
+        empid = request.POST.get('empid')
+        password = request.POST.get('password')
+
+        if empid and password:
+            user = Employee.objects.create_user(empid=empid, password=password)
+            return redirect('login')
+        else:
+            return render(request, 'register.html', {'error': 'All fields are required'})
+    return render(request, 'register.html')

@@ -3,16 +3,15 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 
 
 class CustomUserManager(BaseUserManager):
-    def create_user(self, email, password=None, **extra_fields):
-        if not email:
+    def create_user(self, empid, password=None, **extra_fields):
+        if not empid:
             raise ValueError('The Email field must be set')
-        email = self.normalize_email(email)
-        user = self.model(email=email, **extra_fields)
+        user = self.model(empid=empid, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, password=None, **extra_fields):
+    def create_superuser(self, empid, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
 
@@ -21,24 +20,22 @@ class CustomUserManager(BaseUserManager):
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('Superuser must have is_superuser=True.')
 
-        return self.create_user(email, password, **extra_fields)
+        return self.create_user(empid, password, **extra_fields)
 
 
 class Employee(AbstractBaseUser, PermissionsMixin):
     empid = models.CharField(max_length=8, primary_key=True, default='EMP0001')
-    email = models.EmailField(unique=True, default='example@example.com')
-    empfname = models.CharField(max_length=64, default='FirstName')  # デフォルト値を設定
-    emplname = models.CharField(max_length=64, default='LastName')  # デフォルト値を設定
-    emppasswd = models.CharField(max_length=256, default='password')  # デフォルト値を設定
-    emprole = models.IntegerField(default=0)  # デフォルト値を設定 0: Receptionist, 1: Doctor
+    password = models.CharField(max_length=256, default='password')
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
 
     objects = CustomUserManager()
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['empfname', 'emplname']
+    USERNAME_FIELD = 'empid'
+    REQUIRED_FIELDS = []
 
     def __str__(self):
-        return f"{self.empfname} {self.emplname}"
+        return self.empid
 
 
 class Patient(models.Model):
