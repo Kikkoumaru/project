@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
+    <meta charset="UTF-8">
     <title>従業員登録</title>
 </head>
 <body>
@@ -18,13 +19,9 @@
         <label for="password">パスワード:</label>
         <input type="password" id="password" name="password" required><br><br>
         <label for="emprole">役職:</label>
-        <select id="emprole" name="emprole" required>
-            <option value="0">受付</option>
-            <option value="1">医師</option>
-            <option value="2">管理者</option>
-        </select><br><br>
+        <input type="number" id="emprole" name="emprole" required><br><br>
         <input type="submit" value="登録">
     </form>
-    <a href="{% url 'login' %}">ログインに戻る</a>
+    <a href="{% url 'patient_list' %}">キャンセル</a>
 </body>
 </html>

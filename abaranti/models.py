@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 class CustomUserManager(BaseUserManager):
     def create_user(self, empid, password=None, **extra_fields):
         if not empid:
-            raise ValueError('The Email field must be set')
+            raise ValueError('The empid field must be set')
         user = self.model(empid=empid, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)

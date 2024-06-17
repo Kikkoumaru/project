@@ -1,19 +1,19 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Patient, Employee
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 
 def user_login(request):
     if request.method == 'POST':
         empid = request.POST.get('empid')
         password = request.POST.get('password')
-        user = authenticate(request, empid=empid, password=password)
+        user = authenticate(request, username=empid, password=password)  # empidをusernameに対応させる
         if user is not None:
             login(request, user)
             return redirect('patient_list')
         else:
-            return render(request, 'login.html', {'error': 'Invalid email or password'})
+            return render(request, 'login.html', {'error': 'Invalid empid or password'})
     return render(request, 'login.html')
 
 
@@ -68,6 +68,10 @@ def patient_update(request, patient_id):
     return render(request, 'patient_form.html', {'patient': patient})
 
 
+def is_admin(user):
+    return user.is_superuser  # 管理者かどうかを判定
+
+
 @login_required(login_url='login')
 def patient_delete(request, patient_id):
     patient = get_object_or_404(Patient, pat_id=patient_id)
@@ -88,3 +92,22 @@ def register(request):
         else:
             return render(request, 'register.html', {'error': 'All fields are required'})
     return render(request, 'register.html')
+
+
+@login_required(login_url='login')
+@user_passes_test(is_admin, login_url='login')  # 管理者のみアクセス可能にする
+def employee_register(request):
+    if request.method == 'POST':
+        empid = request.POST.get('empid')
+        empfname = request.POST.get('empfname')
+        emplname = request.POST.get('emplname')
+        password = request.POST.get('password')
+        emprole = request.POST.get('emprole')
+
+        if empid and empfname and emplname and password and emprole is not None:
+            user = Employee.objects.create_user(empid=empid, empfname=empfname, emplname=emplname, password=password,
+                                                emprole=emprole)
+            return redirect('login')
+        else:
+            return render(request, 'employee_register.html', {'error': 'すべてのフィールドを入力してください。'})
+    return render(request, 'employee_register.html')
