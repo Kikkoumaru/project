@@ -28,6 +28,7 @@ class Employee(AbstractBaseUser, PermissionsMixin):
     password = models.CharField(max_length=256, default='password')
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
+    emprole = models.CharField(max_length=20, default='staff')  # CharFieldとして定義する
 
     objects = CustomUserManager()
 

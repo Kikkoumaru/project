@@ -10,4 +10,7 @@ urlpatterns = [
     path('login/', views.user_login, name='login'),
     path('logout/', views.user_logout, name='logout'),
     path('register/', views.register, name='register'),  # ユーザー登録URLの追加
+    path('employee/search/', views.employee_search, name='employee_search'),
+    path('employee/update/<int:pk>/', views.employee_update, name='employee_update'),
+
 ]

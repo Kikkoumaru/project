@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>従業員更新</title>
+</head>
+<body>
+    <h1>従業員更新</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="empid">従業員ID:</label>
+        <input type="text" id="empid" name="empid" value="{{ employee.empid }}" required>
+        <br>
+        <label for="empfname">名前（名）:</label>
+        <input type="text" id="empfname" name="empfname" value="{{ employee.empfname }}">
+        <br>
+        <label for="emplname">名前（姓）:</label>
+        <input type="text" id="emplname" name="emplname" value="{{ employee.emplname }}">
+        <br>
+        <label for="emprole">役割:</label>
+        <input type="text" id="emprole" name="emprole" value="{{ employee.emprole }}">
+        <br>
+        <label for="is_staff">スタッフ権限:</label>
+        <input type="checkbox" id="is_staff" name="is_staff" {% if employee.is_staff %}checked{% endif %}>
+        <br>
+        <label for="is_superuser">スーパーユーザー権限:</label>
+        <input type="checkbox" id="is_superuser" name="is_superuser" {% if employee.is_superuser %}checked{% endif %}>
+        <br>
+        <button type="submit">更新</button>
+    </form>
+</body>
+</html>

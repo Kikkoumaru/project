@@ -111,3 +111,36 @@ def employee_register(request):
         else:
             return render(request, 'employee_register.html', {'error': 'すべてのフィールドを入力してください。'})
     return render(request, 'employee_register.html')
+
+
+def employee_search(request):
+    if request.method == "POST":
+        empid = request.POST.get('empid')
+        try:
+            employee = Employee.objects.get(empid=empid)
+            return redirect('employee_update', pk=employee.pk)
+        except Employee.DoesNotExist:
+            return render(request, 'employee_search.html', {'error': '従業員が見つかりません'})
+    return render(request, 'employee_search.html')
+
+
+def employee_update(request, pk):
+    employee = get_object_or_404(Employee, pk=pk)
+    if request.method == "POST":
+        empid = request.POST.get('empid')
+        empfname = request.POST.get('empfname')
+        emplname = request.POST.get('emplname')
+        emprole = request.POST.get('emprole')
+        is_staff = request.POST.get('is_staff') == 'on'
+        is_superuser = request.POST.get('is_superuser') == 'on'
+
+        employee.empid = empid
+        employee.empfname = empfname
+        employee.emplname = emplname
+        employee.emprole = emprole
+        employee.is_staff = is_staff
+        employee.is_superuser = is_superuser
+        employee.save()
+
+        return redirect('employee_search')
+    return render(request, 'employee_update.html', {'employee': employee})
