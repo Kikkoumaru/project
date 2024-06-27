@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="PY-241.14494.241">
-    <data-source name="database1@localhost" uuid="003d2f12-4046-4926-aee3-58ff93763a22">
+    <data-source name="Django default" uuid="ad51338f-c82d-4245-9fc1-93f2c0e2dc19">
       <database-info product="MySQL" version="8.0.23" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)" dbms="MYSQL" exact-version="8.0.23" exact-driver-version="8.2">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
         <jdbc-catalog-is-schema>true</jdbc-catalog-is-schema>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <secret-storage>master_key</secret-storage>
       <user-name>211013</user-name>
       <schema-mapping>
         <introspection-scope>
@@ -16,13 +15,15 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="Django default" uuid="ad51338f-c82d-4245-9fc1-93f2c0e2dc19">
+    <data-source name="kadaitati@localhost" uuid="8cdfb114-76a1-4b00-84ab-9514d1111649">
       <database-info product="MySQL" version="8.0.23" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)" dbms="MYSQL" exact-version="8.0.23" exact-driver-version="8.2">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
+        <jdbc-catalog-is-schema>true</jdbc-catalog-is-schema>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <user-name>211013</user-name>
+      <secret-storage>master_key</secret-storage>
+      <user-name>kuroda44</user-name>
       <schema-mapping>
         <introspection-scope>
           <node kind="schema" qname="@" />

@@ -5,7 +5,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a025510-30d2-41b6-bd8c-bb195a2563e4" name="変更" comment="6/20にテストで変更を行った　v^_^v">
+      <change afterPath="$PROJECT_DIR$/kadai1/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kadai1/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kadai1/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kadai1/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/admin_password_change.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/admin_password_change_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/capital_search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/capital_search_results.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/password_change.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/password_change_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/register_employee.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/supplier_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/supplier_edit_confirm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/supplier_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/doctor_home/doctorid_patient_search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/doctor_home/medicine_confirmation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/doctor_home/medicine_instructions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/doctor_home/patient_search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/doctor_home/prescription_success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/doctor_home/treatment_history.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/doctor_home/treatment_history_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/admin_dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/admin_home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/admin_password_change.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/admin_password_change_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/doctor_home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/logout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/password_change.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/password_change_done.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/password_home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/password_homeuketuke.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/kadai1/uketuke_home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/uketuke_home/P101.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/uketuke_home/P101_confirm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/uketuke_home/P101_success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/uketuke_home/P102.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/uketuke_home/P103.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/uketuke_home/P104.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/uketuke_home/confirm_patient_insurance.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/uketuke_home/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/uketuke_home/patient_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/uketuke_home/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/003d2f12-4046-4926-aee3-58ff93763a22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/003d2f12-4046-4926-aee3-58ff93763a22/storage_v2/_src_/schema/database1.Fh556g.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/djangoProject2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djangoProject2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/kadai1/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/kadai1/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/migrations/0002_remove_employee_emp_id_remove_employee_first_name_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/kadai1/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/kadai1/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abaranti/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/kadai1/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject2/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject2/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject2/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/djangoProject2/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/employee_register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/employee_search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/employee_update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/patient_confirm_delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/patient_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/patient_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/patient_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +124,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/211013/PycharmProjects/djangoProject2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -62,6 +139,15 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\211013\PycharmProjects\djangoProject2" />
+      <recent name="C:\Users\211013\PycharmProjects\djangoProject2\abaranti" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\211013\PycharmProjects\djangoProject2" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="djangoProject2" type="Python.DjangoServer" factoryName="Django server">
       <module name="djangoProject2" />
@@ -73,6 +159,7 @@
         <env name="DJANGO_SETTINGS_MODULE" value="djangoProject2.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (djangoProject2)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -113,7 +200,10 @@
       <workItem from="1718602583221" duration="4578000" />
       <workItem from="1718677829586" duration="7372000" />
       <workItem from="1718771722756" duration="4969000" />
-      <workItem from="1718842801080" duration="9236000" />
+      <workItem from="1718842801080" duration="9805000" />
+      <workItem from="1719452457441" duration="35000" />
+      <workItem from="1719452507125" duration="3379000" />
+      <workItem from="1719456445313" duration="4005000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <option name="closed" value="true" />
@@ -163,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718850703508</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="6/20にテストで変更を行った　v^_^v">
+      <option name="closed" value="true" />
+      <created>1718854451957</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718854451957</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +272,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
