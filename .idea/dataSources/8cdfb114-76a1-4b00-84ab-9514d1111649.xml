@@ -887,7 +887,7 @@ kadaitati|schema||kuroda44|localhost|UPDATE|G</Grants>
     </schema>
     <schema id="275" parent="1" name="kadaitati">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-06-27.03:54:51</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-07-02.02:04:50</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="276" parent="1" name="kuroda44">
