@@ -3,6 +3,7 @@ from django.contrib.auth.hashers import make_password
 from .models import Employee, Shiiregyosha, Medicine
 import re
 
+
 class EmployeeRegisterForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput, label="Password")
     password_confirm = forms.CharField(widget=forms.PasswordInput, label="Confirm Password")
@@ -20,6 +21,7 @@ class EmployeeRegisterForm(forms.ModelForm):
             raise forms.ValidationError("Passwords do not match.")
         cleaned_data['emppaswd'] = make_password(password)
         return cleaned_data
+
 
 class ShiiregyoshaEditForm(forms.ModelForm):
     class Meta:
@@ -48,6 +50,7 @@ class ShiiregyoshaEditForm(forms.ModelForm):
 
         return shiiretel
 
+
 class CapitalSearchForm(forms.Form):
     capital = forms.CharField(label='資本金', max_length=20)
 
@@ -64,20 +67,25 @@ class CapitalSearchForm(forms.Form):
 
         return int(normalized_data)
 
+
 class PasswordChangeForm(forms.Form):
     new_password = forms.CharField(label='新しいパスワード', widget=forms.PasswordInput)
     confirm_password = forms.CharField(label='パスワード確認', widget=forms.PasswordInput)
+
 
 class MedicineForm(forms.Form):
     medicine = forms.ModelChoiceField(queryset=Medicine.objects.all(), label='薬剤名')
     quantity = forms.IntegerField(label='数量', min_value=1)
 
+
 class PatientSearchForm(forms.Form):
     patfname = forms.CharField(label='患者名', required=False)
     patlname = forms.CharField(label='患者姓', required=False)
 
+
 class PatientidSearchForm(forms.Form):
     patient_id = forms.CharField(label='患者ID', max_length=8)
+
 
 class SupplierForm(forms.ModelForm):
     class Meta:

@@ -41,7 +41,7 @@
 <body>
     <div class="container">
         <h1>処置履歴詳細</h1>
-        <p>患者名: {{ patient.patfname }} {{ patient.patlname }}</p>
+        <p>患者名: {{ treatments.patient.patfname }} {{ treatments.patient.patlname }}</p>
 
         {% if not treatments %}
             <div class="message">
@@ -52,13 +52,11 @@
                 <tr>
                     <th>薬剤名</th>
                     <th>数量</th>
-                    <th>投与日</th>
                 </tr>
                 {% for treatment in treatments %}
                 <tr>
                     <td>{{ treatment.medicine.medicinename }}</td>
                     <td>{{ treatment.quantity }}</td>
-                    <td>{{ treatment.date }}</td>
                 </tr>
                 {% endfor %}
             </table>

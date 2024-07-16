@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>病院一覧</title>
+</head>
+<body>
+   <h1>病院一覧</h1>
+   <table border="1">
+       <tr>
+           <th>他病院ID</th>
+           <th>他病院名</th>
+           <th>他病院住所</th>
+           <th>他病院電話番号</th>
+           <th>資本金</th>
+           <th>救急フラグ</th>
+       </tr>
+       {% for hospital in hospitals %}
+       <tr>
+           <td>{{ hospital.tabyouinid }}</td>
+           <td>{{ hospital.tabyouinmei }}</td>
+           <td>{{ hospital.tabyouinaddress }}</td>
+           <td>
+               <form action="{% url 'confirm_hospital_phone' hospital.tabyouinid %}" method="post">
+                   {% csrf_token %}
+                   <label for="phone_number_{{ hospital.tabyouinid }}">電話番号:</label>
+                   <input type="text" id="phone_number_{{ hospital.tabyouinid }}" name="phone_number" value="{{ hospital.tabyouintel }}">
+                   <button type="submit" name="action" value="confirm">変更</button>
+               </form>
+           </td>
+           <td>{{ hospital.tabyouinshihonkin }}</td>
+           <td>{{ hospital.kyukyu }}</td>
+       </tr>
+       {% endfor %}
+   </table>
+
+   {% if messages %}
+       <ul>
+           {% for message in messages %}
+               <li>{{ message }}</li>
+           {% endfor %}
+       </ul>
+   {% endif %}
+
+   <a href="{% url 'admin_home' %}" class="btn">戻る</a>
+</body>
+</html>

@@ -1,6 +1,7 @@
+from django.db.models import Max
 from django.utils.timezone import now
 
-from .models import Employee, MedicineAdministration
+from .models import Employee, MedicineAdministration, Tabyouin
 from django.contrib.auth.hashers import make_password, check_password
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Shiiregyosha
@@ -12,6 +13,9 @@ from .forms import PatientSearchForm, MedicineForm
 from django.urls import reverse
 import re
 from .forms import PasswordChangeForm
+from django.utils import timezone
+from django.contrib import messages
+from datetime import date
 
 
 def login_view(request):
@@ -431,13 +435,7 @@ def treatment_history_detail(request, patient_id):
 
     # 処置履歴を取得
     treatments = MedicineAdministration.objects.filter(patient=patient)
-
-    # コンテキストに患者情報と処置履歴を追加してテンプレートに渡す
-    context = {
-        'patient': patient,
-        'treatments': treatments
-    }
-    return render(request, 'doctor_home/treatment_history_detail.html', context)
+    return render(request, 'doctor_home/treatment_history_detail.html', {'treatments': treatments})
 
 
 def doctor_medicine_instructions(request, patient_id):
@@ -697,3 +695,189 @@ def patient_searchu(request):
         'form': form,
         'results': results,
     })
+
+
+def register_hospital(request):
+    if request.method == 'POST':
+        tabyouinid = request.POST.get('tabyouinid')
+        tabyouinmei = request.POST.get('tabyouinmei')
+        tabyouinaddress = request.POST.get('tabyouinaddress')
+        tabyouintel = request.POST.get('tabyouintel')
+        tabyouinshihonkin = request.POST.get('tabyouinshihonkin')
+        kyukyu = request.POST.get('kyukyu')
+
+        tabyouintel_clean = re.sub(r'[()-]', '', tabyouintel)  # ハイフンと括弧を削除
+        if not tabyouintel_clean.isdigit() or len(tabyouintel_clean) != 11:
+            messages.error(request, '電話番号は11桁の数字で入力してください。')
+            return render(request, 'admin_home/register_hospital.html')
+
+        # 救急対応のバリデーション
+        if kyukyu not in ['1', '0']:
+            messages.error(request, '救急対応は「1」または「0」を選択してください。')
+            return render(request, 'admin_home/register_hospital.html')
+
+        # IDの重複チェック
+        if Tabyouin.objects.filter(tabyouinid=tabyouinid).exists():
+            messages.error(request, '指定されたIDは既に登録されています。')
+            return render(request, 'admin_home/register_hospital.html')
+
+        # バリデーションを通過した場合、登録確認画面へリダイレクト
+        return render(request, 'admin_home/confirm_hospital_registration.html', {
+            'tabyouinid': tabyouinid,
+            'tabyouinmei': tabyouinmei,
+            'tabyouinaddress': tabyouinaddress,
+            'tabyouintel': tabyouintel,
+            'tabyouinshihonkin': tabyouinshihonkin,
+            'kyukyu': kyukyu,
+        })
+
+    return render(request, 'admin_home/register_hospital.html')
+
+
+def confirm_hospital_registration(request):
+    if request.method == 'POST':
+        tabyouinid = request.POST.get('tabyouinid')
+        tabyouinmei = request.POST.get('tabyouinmei')
+        tabyouinaddress = request.POST.get('tabyouinaddress')
+        tabyouintel = request.POST.get('tabyouintel')
+        tabyouinshihonkin = request.POST.get('tabyouinshihonkin')
+        kyukyu = request.POST.get('kyukyu')
+
+        try:
+            # 資本金のクリーンアップ
+            tabyouinshihonkin = re.sub(r'[¥,]', '', tabyouinshihonkin)
+
+            # 救急対応のバリデーション
+            if kyukyu not in ['1', '0']:
+                messages.error(request, '救急対応は「1」または「0」を選択してください。')
+                return redirect('register_hospital')
+
+            # 資本金のバリデーション
+            if not tabyouinshihonkin or not tabyouinshihonkin.isdigit():
+                messages.error(request, '資本金には数値のみを使用してください。')
+                return redirect('register_hospital')
+
+            # IDの重複チェック
+            if Tabyouin.objects.filter(tabyouinid=tabyouinid).exists():
+                messages.error(request, '指定されたIDは既に登録されています。')
+                return redirect('register_hospital')
+
+            # 登録処理
+            new_hospital = Tabyouin(
+                tabyouinid=tabyouinid,
+                tabyouinmei=tabyouinmei,
+                tabyouinaddress=tabyouinaddress,
+                tabyouintel=tabyouintel,
+                tabyouinshihonkin=int(tabyouinshihonkin),
+                kyukyu=kyukyu
+            )
+            new_hospital.save()
+
+            messages.success(request, '新規病院を登録しました。')
+            return redirect('register_hospital')  # 登録後に登録画面にリダイレクト
+
+
+        except Exception as e:
+            messages.error(request, f'エラーが発生しました: {str(e)}')
+            return render(request, 'admin_home/register_hospital.html')
+
+    return redirect('register_hospital')  # GETリクエストでこのビューにアクセスされた場合は登録画面にリダイレクト
+
+
+def hospital_list(request):
+    hospitals = Tabyouin.objects.all()
+    return render(request, 'admin_home/hospital_list.html', {'hospitals': hospitals})
+
+
+def confirm_hospital_phone(request, tabyouinid):
+    hospital = get_object_or_404(Tabyouin, tabyouinid=tabyouinid)
+
+    if request.method == 'POST':
+        if 'phone_number' in request.POST:
+            new_phone = request.POST.get('phone_number')
+
+            try:
+                # 検証用に()と-を削除してクリーン
+                cleaned_number = re.sub(r'[()-]', '', new_phone)
+
+                if re.search(r'[a-zA-Z]', new_phone):
+                    raise ValueError('電話番号にアルファベットを含めないでください。')
+
+                if re.search(r'[^\d()-]', new_phone):
+                    raise ValueError('電話番号は数字で、()または-以外のセパレータを含めないでください。')
+
+                if not re.match(r'^[0-9]{11}$', cleaned_number):
+                    raise ValueError('電話番号は11桁の数字で入力してください。')
+
+
+            except ValueError as e:
+                messages.error(request, str(e))
+                return redirect('hospital_list')
+
+            return render(request, 'admin_home/confirm_hospital_phone.html',
+                          {'new_phone': new_phone, 'tabyouinid': tabyouinid})
+
+
+        elif 'new_phone' in request.POST:
+            new_phone = request.POST.get('new_phone')
+
+            # ()と-を含めたまま保存
+            hospital.tabyouintel = new_phone
+            hospital.save()
+
+            messages.success(request, '電話番号が正常に変更されました。')
+            return redirect('hospital_list')
+
+    return redirect('hospital_list')
+
+
+def search_by_capital(request):
+    if request.method == 'POST':
+        capital = request.POST.get('capital')
+
+        if '-' in capital:
+            messages.error(request, '有効な資本金を入力してください。')
+            return render(request, 'admin_home/search_by_capital.html')
+
+        # 全角数値、全角カンマ、半角数値、半角カンマ、\、￥を統一して変換
+        capital = re.sub(r'[０-９]', lambda x: chr(ord(x.group()) - 0xFEE0), capital)  # 全角数値を半角数値に変換
+        capital = re.sub(r'，', ',', capital)  # 全角カンマを半角カンマに変換
+        capital = capital.replace('￥', '')  # 全角円記号を削除
+        capital = capital.replace('\\', '')  # 半角円記号を削除
+
+        # 数字とカンマ以外の文字を削除
+        capital = re.sub(r'[^\d,]', '', capital)
+
+        # カンマを削除
+        capital = capital.replace(',', '')
+
+        if not capital.isdigit():
+            messages.error(request, '有効な資本金を入力してください。')
+            return render(request, 'admin_home/search_by_capital.html')
+
+        capital = int(capital)
+        hospitals = Tabyouin.objects.filter(tabyouinshihonkin__gte=capital)
+
+        if not hospitals.exists():
+            messages.info(request, '該当する病院が見つかりませんでした。')
+        else:
+            # 最大資本金を取得
+            max_capital = Tabyouin.objects.aggregate(Max('tabyouinshihonkin'))['tabyouinshihonkin__max']
+
+            # 検索条件に一致する病院が1件以上存在するか確認
+            if max_capital and capital <= max_capital:
+                hospitals = Tabyouin.objects.filter(tabyouinshihonkin__gte=capital)
+            else:
+                messages.info(request, '該当する病院が見つかりませんでした。')
+                hospitals = []
+
+        return render(request, 'admin_home/search_by_capital.html', {'hospitals': hospitals})
+
+    return render(request, 'admin_home/search_by_capital.html')
+
+
+def expired_insurance_patients(request):
+    expired_patients = Patient.objects.filter(insurance_expiry_date__lt=timezone.now())
+    if not expired_patients.exists():
+        messages.error(request, '有効期限が切れている患者は見つかりませんでした。')
+    return render(request, 'uketuke_home/expired_insurance_patients.html', {'patients': expired_patients})

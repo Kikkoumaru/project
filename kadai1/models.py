@@ -40,3 +40,12 @@ class MedicineAdministration(models.Model):
     medicine = models.ForeignKey(Medicine, on_delete=models.CASCADE, verbose_name='薬剤')
     quantity = models.IntegerField(verbose_name='数量')
     medicine_name = models.CharField(max_length=100, verbose_name='薬剤名', default='unknown')
+
+
+class Tabyouin(models.Model):
+    tabyouinid = models.CharField(primary_key=True, max_length=8, verbose_name="他病院ID")
+    tabyouinmei = models.CharField(max_length=64, verbose_name="他病院名")
+    tabyouinaddress = models.CharField(max_length=64, verbose_name="他病院住所")
+    tabyouintel = models.CharField(max_length=20, verbose_name="他病院電話番号")
+    tabyouinshihonkin = models.IntegerField(verbose_name="資本金")
+    kyukyu = models.IntegerField(verbose_name="救急フラグ", help_text="救急対応の時は1、そうでない時は1以外")

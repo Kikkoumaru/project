@@ -45,7 +45,7 @@ urlpatterns = [
     path('treatment_history/', treatment_history, name='treatment_history'),
     path('treatment_history_detail/<str:patient_id>/', treatment_history_detail, name='treatment_history_detail'),
     path('submit_prescriptions/<str:patient_id>/', submit_prescriptions, name='submit_prescriptions'),
-    path('delete_prescription/<str:patient_id>/<int:index>/', delete_prescription, name='delete_prescription'),
+    path('delete_prescription/<str:patient_id>/<str:index>/', delete_prescription, name='delete_prescription'),
     path('doctor_patientid_search/', doctor_patientid_search, name='doctor_patientid_search'),
     path('prescription/', prescription, name='prescription'),
     path('password_change_b/', password_change_b, name='password_change_b'),
@@ -59,7 +59,17 @@ urlpatterns = [
     path('patient/edit/', patient_insurance_edit, name='patient_insurance_edit'),
     path('patient_searchu/', views.patient_searchu, name='patient_searchu'),
     path('medicine_instructions/<int:patient_id>/', views.medicine_instructions, name='medicine_instructions'),
-    path('medicine_confirmation/<int:patient_id>/', views.medicine_confirmation, name='medicine_confirmation'),
+    path('medicine_confirmation/<str:patient_id>/', views.medicine_confirmation, name='medicine_confirmation'),
     path('prescription_success/', views.prescription_success, name='prescription_success'),
+    path('patient_search/', views.patient_search, name='patient_search'),
+    path('expired_insurance_patients/', views.expired_insurance_patients, name='expired_insurance_patients'),
+    path('register_hospital/', views.register_hospital, name='register_hospital'),
+    path('confirm_hospital_registration/', views.confirm_hospital_registration, name='confirm_hospital_registration'),
+    path('confirm_hospital_phone/<str:tabyouinid>/', views.confirm_hospital_phone, name='confirm_hospital_phone'),
+
+    path('hospital_list/', views.hospital_list, name='hospital_list'),
+    path('confirm_hospital_phone/', views.confirm_hospital_phone, name='confirm_hospital_phone'),  # 確認画面用のURLを追加
+
+    path('search_by_capital/', views.search_by_capital, name='search_by_capital'),  # 新しいURLパターンを追加
 
 ]

@@ -5,9 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a025510-30d2-41b6-bd8c-bb195a2563e4" name="変更" comment="6/27にテストで変更を行った　v^_^v">
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/confirm_hospital_phone.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/confirm_hospital_registration.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/hospital_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/register_hospital.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin_home/search_by_capital.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/uketuke_home/expired_insurance_patients.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/uketuke_home/patient_search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8cdfb114-76a1-4b00-84ab-9514d1111649.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8cdfb114-76a1-4b00-84ab-9514d1111649.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/djangoProject2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/djangoProject2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kadai1/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/kadai1/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kadai1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/kadai1/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kadai1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/kadai1/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kadai1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/kadai1/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/doctor_home/medicine_instructions.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor_home/medicine_instructions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/doctor_home/treatment_history.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor_home/treatment_history.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/doctor_home/treatment_history_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/doctor_home/treatment_history_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/kadai1/admin_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/kadai1/admin_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/kadai1/doctor_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/kadai1/doctor_home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +46,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Kikkoumaru&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Kikkoumaru/project.git&quot;,
+    &quot;accountId&quot;: &quot;b33918d1-b13c-4307-b673-864f705cc4c2&quot;
+  }
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -57,6 +87,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -85,14 +116,13 @@
         <env name="DJANGO_SETTINGS_MODULE" value="djangoProject2.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Python 3.12 (djangoProject2)" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="localhost" />
+      <option name="port" value="80" />
+      <option name="host" value="0.0.0.0" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="" />
       <option name="runTestServer" value="false" />
@@ -105,8 +135,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
-        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
+        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
       </set>
     </attachedChunks>
   </component>
@@ -132,6 +162,17 @@
       <workItem from="1719456445313" duration="4476000" />
       <workItem from="1719885831423" duration="5014000" />
       <workItem from="1719981335613" duration="1028000" />
+      <workItem from="1720061853080" duration="110000" />
+      <workItem from="1720061985967" duration="193000" />
+      <workItem from="1720062191464" duration="1392000" />
+      <workItem from="1720146143617" duration="9640000" />
+      <workItem from="1720259991451" duration="736000" />
+      <workItem from="1720371526080" duration="27000" />
+      <workItem from="1720413808591" duration="15309000" />
+      <workItem from="1720743419081" duration="6516000" />
+      <workItem from="1721047719738" duration="6810000" />
+      <workItem from="1721095567594" duration="6055000" />
+      <workItem from="1721105417195" duration="2530000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <option name="closed" value="true" />

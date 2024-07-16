@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>保険証が切れている患者リスト</title>
+</head>
+<body>
+    <h1>保険証が切れている患者リスト</h1>
+    {% if patients %}
+        <table>
+            <tr>
+                <th>患者ID</th>
+                <th>名前</th>
+                <th>保険証番号</th>
+                <th>保険証の有効期限</th>
+            </tr>
+            {% for patient in patients %}
+            <tr>
+                <td>{{ patient.pat_id }}</td>
+                <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+                <td>{{ patient.insurance_number }}</td>
+                <td>{{ patient.insurance_expiry_date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>保険証が切れている患者はいません。</p>
+    {% endif %}
+</body>
+</html>
