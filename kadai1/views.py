@@ -16,13 +16,16 @@ from .forms import PasswordChangeForm
 from django.utils import timezone
 from django.contrib import messages
 from datetime import date
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import AuthenticationForm
 
 
 def login_view(request):
     if request.method == 'POST':
         empid = request.POST['empid']
         password = request.POST['password']
-
         try:
             employee = Employee.objects.get(empid=empid)
             if employee.emprole == 1:
@@ -59,6 +62,8 @@ def logout_view(request):
 
 
 def register_employee(request):
+    if request.session['employee_role'] != 1:
+        return redirect('login')
     if request.method == 'POST':
         empid = request.POST['empid']
         empfname = request.POST['empfname']
